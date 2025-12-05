@@ -1,6 +1,10 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import jwt
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import datetime
 from functools import wraps
 
@@ -66,8 +70,8 @@ lp_manager = LearnerProfile(db)
 interaction_logger = InteractionLogger(lp_manager)
 affective_analyzer = AffectiveAnalyzer()
 intervention_engine = InterventionEngine()
-ai_tutor = AITutor(api_key="AIzaSyBAvMC-eGWDwWqnTUPNSFswRtcJ7ZHV0Ds")
-assistant = AIAssistant(api_key="AIzaSyBAvMC-eGWDwWqnTUPNSFswRtcJ7ZHV0Ds")
+ai_tutor = AITutor(api_key=os.getenv("GEMINI_API_KEY"))
+assistant = AIAssistant(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Create default guest user on startup
 with app.app_context():

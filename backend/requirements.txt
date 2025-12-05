@@ -4,3 +4,4 @@ NetworkX
 Matplotlib
 werkzeug
 PyJWT
+python-dotenv
