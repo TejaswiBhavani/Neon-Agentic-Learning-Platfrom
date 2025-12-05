@@ -56,6 +56,14 @@ const StudyPlanDisplay: React.FC = () => {
                         <div>
                             {concept.status === 'completed' && <CheckCircle className="text-green-500" />}
                             {concept.status === 'locked' && <Lock className="text-gray-400 dark:text-gray-600" />}
+                            {concept.status === 'review' && (
+                                <button
+                                    onClick={() => navigate(`/tutor?topic=${encodeURIComponent(concept.name)}&id=${concept.id}`)}
+                                    className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition shadow-lg hover:shadow-yellow-500/30"
+                                >
+                                    <RefreshCw size={18} /> Review
+                                </button>
+                            )}
                             {concept.status === 'unlocked' && (
                                 <button
                                     onClick={() => navigate(`/tutor?topic=${encodeURIComponent(concept.name)}&id=${concept.id}`)}

@@ -20,7 +20,7 @@ export interface Concept {
     name: string;
     level: 'beginner' | 'intermediate' | 'advanced';
     time_estimate: number;
-    status: 'locked' | 'unlocked' | 'completed';
+    status: 'locked' | 'unlocked' | 'completed' | 'review';
     prerequisites: string[];
 }
 

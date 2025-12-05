@@ -65,26 +65,27 @@ class StudyPlanGenerator:
 
         # Add New Content
         for concept_id in topo_order:
-            if concept_id in completed and concept_id not in review_candidates:
-                continue # Skip if completed and not for review
+            if concept_id in review_candidates:
+                continue # Already added as review
             
             concept_data = next((c for c in graph_data['nodes'] if c['id'] == concept_id), None)
             if not concept_data: continue
 
             # Check prerequisites
             prereqs = set(G.predecessors(concept_id))
-            if prereqs.issubset(completed):
+            
+            if concept_id in completed:
+                status = "completed"
+            elif prereqs.issubset(completed):
                 status = "unlocked"
             else:
                 status = "locked"
             
             print(f"DEBUG: Concept {concept_id} prereqs: {prereqs}, status: {status}")
             
-            # Don't add completed items again unless they were review candidates (handled above)
-            if concept_id not in completed:
-                 plan.append({
-                    **concept_data,
-                    "status": status
-                })
+            plan.append({
+                **concept_data,
+                "status": status
+            })
 
         return plan

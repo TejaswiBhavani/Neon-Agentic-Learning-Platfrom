@@ -142,6 +142,37 @@ def save_feedback():
         db.session.rollback()
         return jsonify({'message': 'Error saving feedback', 'error': str(e)}), 500
 
+@app.route('/api/interactions', methods=['POST'])
+def log_interaction():
+    current_user = get_default_user()
+    data = request.json
+    
+    concept_id = data.get('concept_id')
+    action = data.get('action')
+    is_correct = data.get('is_correct')
+    
+    if not concept_id or not action:
+        return jsonify({'message': 'Concept ID and action are required'}), 400
+        
+    # Log interaction
+    interaction_data = {
+        'concept_id': concept_id,
+        'action': action,
+        'is_correct': is_correct
+    }
+    interaction_logger.log_interaction(current_user['id'], interaction_data)
+    
+    # Check for completion (e.g., passing a quiz)
+    if action == 'quiz_completed' and is_correct:
+        print(f"DEBUG: Marking concept {concept_id} as completed for user {current_user['id']}")
+        # Update learner profile
+        completed = set(current_user.get('completed_concepts', []))
+        if concept_id not in completed:
+            completed.add(concept_id)
+            lp_manager.update_learner(current_user['id'], {'completed_concepts': list(completed)})
+            
+    return jsonify({'message': 'Interaction logged successfully'})
+
 # --- Learner Routes ---
 @app.route('/api/learners/<learner_id>', methods=['GET'])
 def get_learner(learner_id):
