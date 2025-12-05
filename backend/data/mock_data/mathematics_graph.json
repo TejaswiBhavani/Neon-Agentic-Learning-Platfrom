@@ -1,0 +1,71 @@
+{
+    "domain": "Mathematics Basics",
+    "nodes": [
+        {
+            "id": "math_c1",
+            "name": "Arithmetic",
+            "level": "beginner",
+            "time_estimate": 25
+        },
+        {
+            "id": "math_c2",
+            "name": "Fractions",
+            "level": "beginner",
+            "time_estimate": 40
+        },
+        {
+            "id": "math_c3",
+            "name": "Percentages",
+            "level": "beginner",
+            "time_estimate": 30
+        },
+        {
+            "id": "math_c4",
+            "name": "Algebra Basics",
+            "level": "intermediate",
+            "time_estimate": 50
+        },
+        {
+            "id": "math_c5",
+            "name": "Geometry",
+            "level": "intermediate",
+            "time_estimate": 60
+        },
+        {
+            "id": "math_c6",
+            "name": "Trigonometry",
+            "level": "advanced",
+            "time_estimate": 80
+        }
+    ],
+    "edges": [
+        {
+            "source": "math_c1",
+            "target": "math_c2"
+        },
+        {
+            "source": "math_c1",
+            "target": "math_c3"
+        },
+        {
+            "source": "math_c2",
+            "target": "math_c4"
+        },
+        {
+            "source": "math_c1",
+            "target": "math_c4"
+        },
+        {
+            "source": "math_c3",
+            "target": "math_c4"
+        },
+        {
+            "source": "math_c4",
+            "target": "math_c5"
+        },
+        {
+            "source": "math_c5",
+            "target": "math_c6"
+        }
+    ]
+}

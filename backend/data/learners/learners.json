@@ -1,0 +1,381 @@
+[
+  {
+    "id": "L001",
+    "name": "Aarav Sharma",
+    "email": "aarav@example.com",
+    "password_hash": "pbkdf2:sha256:600000$Z7... (mock)",
+    "skill_level": "beginner",
+    "learning_goal": "Learn programming",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [
+      "prog_c1"
+    ],
+    "interaction_log": []
+  },
+  {
+    "id": "L002",
+    "name": "Priya Gupta",
+    "email": "priya@example.com",
+    "password_hash": "pbkdf2:sha256:600000$Y8... (mock)",
+    "skill_level": "intermediate",
+    "learning_goal": "Master mathematics",
+    "preferred_style": "kinesthetic",
+    "current_domain": "Mathematics Basics",
+    "completed_concepts": [
+      "math_c1",
+      "math_c2"
+    ],
+    "interaction_log": []
+  },
+  {
+    "id": "89d0a738-6919-4724-ac73-977f76b7c6a9",
+    "name": "Test User 2",
+    "email": "test2@example.com",
+    "password_hash": "pbkdf2:sha256:260000$o1JlUqLIulYVuYl8$d2a9b49f99036a03844beb3b2610cbf7eee2df4a8ff3e270f7f9b34a0793ebbe",
+    "skill_level": "beginner",
+    "learning_goal": "",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [],
+    "interaction_log": [
+      {
+        "concept_id": "prog_c1",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 5000,
+        "timestamp": "2025-12-03T18:21:10.842111"
+      }
+    ]
+  },
+  {
+    "id": "17dfc906-309d-4d61-9756-8f6355de5673",
+    "name": "Tejaswi Bhavani Hari",
+    "email": "teju@gmail.com",
+    "password_hash": "pbkdf2:sha256:260000$S1k1N65Chrg2EqTB$80191f6c07bd067ad2a7a4ce85d26ea09121ca870f3cfb11afb19de10b6839b1",
+    "skill_level": "beginner",
+    "learning_goal": "python",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [],
+    "interaction_log": []
+  },
+  {
+    "id": "b307a654-bf10-41fd-b4e7-f9cfd1ec1669",
+    "name": "Tejaswi Bhavani Hari",
+    "email": "teja@gmail.com",
+    "password_hash": "pbkdf2:sha256:260000$6j25X7cnF7xCTo4r$c29d4958c47c3587c2b10919617ce8726a9fa848f5f85bfcf613128246c675a1",
+    "skill_level": "Intermediate",
+    "learning_goal": "Maths",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [
+      "prog_c1",
+      "prog_c2",
+      "math_c1",
+      "prog_c3",
+      "prog_c4",
+      "prog_c5",
+      "math_c2"
+    ],
+    "interaction_log": [
+      {
+        "concept_id": "prog_c1",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 6464,
+        "timestamp": "2025-12-03T18:48:31.684616"
+      },
+      {
+        "concept_id": "prog_c2",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 6699,
+        "timestamp": "2025-12-03T18:48:46.477772"
+      },
+      {
+        "concept_id": "prog_c3",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 5188,
+        "timestamp": "2025-12-03T18:49:00.233816"
+      },
+      {
+        "concept_id": "math_c1",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 6059,
+        "timestamp": "2025-12-03T19:00:54.668629"
+      },
+      {
+        "concept_id": "prog_c3",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 10228,
+        "timestamp": "2025-12-03T20:36:54.450024"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 3193,
+        "timestamp": "2025-12-03T20:37:08.747251"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 3069,
+        "timestamp": "2025-12-03T20:37:13.375984"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2751,
+        "timestamp": "2025-12-03T20:37:22.016556"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 3122,
+        "timestamp": "2025-12-03T20:37:26.873366"
+      },
+      {
+        "concept_id": "prog_c5",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2831,
+        "timestamp": "2025-12-03T20:37:38.561279"
+      },
+      {
+        "concept_id": "prog_c5",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 7791,
+        "timestamp": "2025-12-03T20:37:51.416887"
+      },
+      {
+        "concept_id": "math_c2",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 5566,
+        "timestamp": "2025-12-03T20:38:20.506041"
+      }
+    ]
+  },
+  {
+    "id": "988bcdfe-3955-4b39-b878-3dc61382673f",
+    "name": "Test User",
+    "email": "testuser@example.com",
+    "password_hash": "pbkdf2:sha256:260000$aOsAnbeSPpea16De$cfd13ec28ca375cefc27916e7df446731e7a31724bb03d9298ece1b2ec173871",
+    "skill_level": "beginner",
+    "learning_goal": "",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [],
+    "interaction_log": []
+  },
+  {
+    "id": "b1e6800d-05f4-4e42-9a49-dc18cd3545a2",
+    "name": "Tejaswi Bhavani Hari",
+    "email": "tejus@gmail.com",
+    "password_hash": "pbkdf2:sha256:260000$5Xj9SZAebNzN7Xdo$3cd15bcf65663e4aa81368d142bd982885e2e85166d2566a47c23e67df5bbde7",
+    "dob": "2013-01-02",
+    "age": 12,
+    "skill_level": "beginner",
+    "learning_goal": "Maths",
+    "preferred_style": "visual",
+    "current_domain": "Programming Basics",
+    "completed_concepts": [
+      "math_c1",
+      "math_c2",
+      "prog_c1",
+      "prog_c2",
+      "prog_c3",
+      "math_c3",
+      "prog_c4",
+      "prog_c5",
+      "prog_c6",
+      "recursion"
+    ],
+    "interaction_log": [
+      {
+        "concept_id": "math_c1",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 4109,
+        "timestamp": "2025-12-03T20:50:39.262869"
+      },
+      {
+        "concept_id": "math_c1",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 3024,
+        "timestamp": "2025-12-03T20:50:52.573744"
+      },
+      {
+        "concept_id": "math_c2",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2870,
+        "timestamp": "2025-12-03T20:55:20.842549"
+      },
+      {
+        "concept_id": "math_c2",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2666,
+        "timestamp": "2025-12-03T20:55:25.287103"
+      },
+      {
+        "concept_id": "math_c2",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2268,
+        "timestamp": "2025-12-03T20:55:29.919686"
+      },
+      {
+        "concept_id": "math_c2",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2743,
+        "timestamp": "2025-12-03T20:55:34.379316"
+      },
+      {
+        "concept_id": "prog_c1",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 5385,
+        "timestamp": "2025-12-03T20:55:57.749120"
+      },
+      {
+        "concept_id": "prog_c1",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2921,
+        "timestamp": "2025-12-03T20:56:02.824177"
+      },
+      {
+        "concept_id": "prog_c2",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 6732,
+        "timestamp": "2025-12-03T20:56:15.759135"
+      },
+      {
+        "concept_id": "prog_c2",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2450,
+        "timestamp": "2025-12-03T20:56:19.939442"
+      },
+      {
+        "concept_id": "prog_c3",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 8242,
+        "timestamp": "2025-12-03T20:57:13.788950"
+      },
+      {
+        "concept_id": "math_c3",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 8214,
+        "timestamp": "2025-12-03T20:59:23.854037"
+      },
+      {
+        "concept_id": "math_c3",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 3161,
+        "timestamp": "2025-12-03T20:59:28.816850"
+      },
+      {
+        "concept_id": "math_c3",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 3178,
+        "timestamp": "2025-12-03T20:59:35.977597"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2408,
+        "timestamp": "2025-12-03T21:01:10.087926"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2334,
+        "timestamp": "2025-12-03T21:01:15.996217"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2099,
+        "timestamp": "2025-12-03T21:01:19.983361"
+      },
+      {
+        "concept_id": "prog_c4",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2199,
+        "timestamp": "2025-12-03T21:01:24.904698"
+      },
+      {
+        "concept_id": "prog_c5",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 9701,
+        "timestamp": "2025-12-03T21:01:39.095915"
+      },
+      {
+        "concept_id": "prog_c5",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2432,
+        "timestamp": "2025-12-03T21:01:43.558452"
+      },
+      {
+        "concept_id": "prog_c5",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2557,
+        "timestamp": "2025-12-03T21:01:48.036756"
+      },
+      {
+        "concept_id": "prog_c6",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 5256,
+        "timestamp": "2025-12-03T21:01:57.828109"
+      },
+      {
+        "concept_id": "recursion",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 2674,
+        "timestamp": "2025-12-03T21:02:06.649271"
+      },
+      {
+        "concept_id": "recursion",
+        "action": "submit_answer",
+        "is_correct": false,
+        "response_time_ms": 3262,
+        "timestamp": "2025-12-03T21:02:31.518063"
+      },
+      {
+        "concept_id": "recursion",
+        "action": "submit_answer",
+        "is_correct": true,
+        "response_time_ms": 2432,
+        "timestamp": "2025-12-03T21:02:35.732618"
+      }
+    ]
+  }
+]

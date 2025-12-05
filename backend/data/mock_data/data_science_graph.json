@@ -1,0 +1,94 @@
+{
+    "domain": "Data Science",
+    "concepts": [
+        {
+            "id": "python_basics",
+            "name": "Python Basics",
+            "level": "beginner",
+            "time_estimate": 45,
+            "prerequisites": []
+        },
+        {
+            "id": "numpy_basics",
+            "name": "NumPy Arrays",
+            "level": "beginner",
+            "time_estimate": 30,
+            "prerequisites": [
+                "python_basics"
+            ]
+        },
+        {
+            "id": "pandas_intro",
+            "name": "Pandas DataFrames",
+            "level": "intermediate",
+            "time_estimate": 60,
+            "prerequisites": [
+                "numpy_basics"
+            ]
+        },
+        {
+            "id": "data_cleaning",
+            "name": "Data Cleaning",
+            "level": "intermediate",
+            "time_estimate": 50,
+            "prerequisites": [
+                "pandas_intro"
+            ]
+        },
+        {
+            "id": "matplotlib_plotting",
+            "name": "Visualization with Matplotlib",
+            "level": "intermediate",
+            "time_estimate": 45,
+            "prerequisites": [
+                "pandas_intro"
+            ]
+        },
+        {
+            "id": "statistics_101",
+            "name": "Descriptive Statistics",
+            "level": "beginner",
+            "time_estimate": 40,
+            "prerequisites": []
+        },
+        {
+            "id": "probability_basics",
+            "name": "Probability Theory",
+            "level": "intermediate",
+            "time_estimate": 55,
+            "prerequisites": [
+                "statistics_101"
+            ]
+        },
+        {
+            "id": "linear_regression",
+            "name": "Linear Regression",
+            "level": "advanced",
+            "time_estimate": 75,
+            "prerequisites": [
+                "data_cleaning",
+                "matplotlib_plotting",
+                "statistics_101"
+            ]
+        },
+        {
+            "id": "logistic_regression",
+            "name": "Logistic Regression",
+            "level": "advanced",
+            "time_estimate": 80,
+            "prerequisites": [
+                "linear_regression",
+                "probability_basics"
+            ]
+        },
+        {
+            "id": "model_evaluation",
+            "name": "Model Evaluation Metrics",
+            "level": "advanced",
+            "time_estimate": 60,
+            "prerequisites": [
+                "logistic_regression"
+            ]
+        }
+    ]
+}

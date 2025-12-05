@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "prog_c1",
+      "name": "Variables & Data Types",
+      "level": "beginner",
+      "time_estimate": 30,
+      "visual_aid": "https://via.placeholder.com/400x300?text=Variables+Visualized"
+    },
+    {
+      "id": "prog_c2",
+      "name": "Conditionals",
+      "level": "beginner",
+      "time_estimate": 40,
+      "visual_aid": "https://via.placeholder.com/400x300?text=If-Else+Flowchart"
+    },
+    {
+      "id": "prog_c3",
+      "name": "Loops",
+      "level": "beginner",
+      "time_estimate": 45,
+      "visual_aid": "https://via.placeholder.com/400x300?text=Loop+Cycle+Diagram"
+    },
+    {
+      "id": "prog_c4",
+      "name": "Functions",
+      "level": "intermediate",
+      "time_estimate": 60,
+      "visual_aid": "https://via.placeholder.com/400x300?text=Function+Input-Output"
+    },
+    {
+      "id": "prog_c5",
+      "name": "Lists & Arrays",
+      "level": "intermediate",
+      "time_estimate": 50
+    },
+    {
+      "id": "prog_c6",
+      "name": "OOP",
+      "level": "advanced",
+      "time_estimate": 90
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "level": "advanced",
+      "time_estimate": 70
+    },
+    {
+      "id": "sorting_algos",
+      "name": "Sorting Algorithms",
+      "level": "advanced",
+      "time_estimate": 90
+    },
+    {
+      "id": "dictionaries",
+      "name": "Dictionaries/HashMaps",
+      "level": "intermediate",
+      "time_estimate": 50
+    }
+  ],
+  "edges": [
+    {
+      "source": "prog_c1",
+      "target": "prog_c2"
+    },
+    {
+      "source": "prog_c2",
+      "target": "prog_c3"
+    },
+    {
+      "source": "prog_c2",
+      "target": "prog_c4"
+    },
+    {
+      "source": "prog_c3",
+      "target": "prog_c5"
+    },
+    {
+      "source": "prog_c4",
+      "target": "prog_c6"
+    },
+    {
+      "source": "prog_c5",
+      "target": "dictionaries"
+    },
+    {
+      "source": "prog_c4",
+      "target": "recursion"
+    },
+    {
+      "source": "prog_c5",
+      "target": "sorting_algos"
+    }
+  ]
+}

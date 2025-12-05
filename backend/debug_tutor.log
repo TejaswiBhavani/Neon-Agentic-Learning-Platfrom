@@ -1,0 +1,35 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n  \"score\": 3,\n  \"total\": 5,\n  \"summary\": \"You've grasped some key concepts about variables and data types! Keep up the good work. Let's review a couple of areas for improvement.\",\n  \"next_steps\": \"Focus on reviewing variable scope and the differences between static and dynamic typing. Understanding these concepts is crucial for avoiding common programming errors.\",\n  \"results\": [\n    {\n      \"id\": 1,\n      \"question\": \"Which of the following is NOT a common scope for a variable?\",\n      \"user_answer\": \"Global scope\",\n      \"correct_answer\": \"Physical scope\",\n      \"is_correct\": false,\n      \"explanation\": \"Incorrect. Global scope, local scope, and lexical scope are all common variable scopes. Physical scope is not a recognized scoping term in programming.\"\n    },\n    {\n      \"id\": 2,\n      \"question\": \"Which of the following best describes static typing?\",\n      \"user_answer\": \"Variables are not explicitly declared with a data type.\",\n      \"correct_answer\": \"Type checking is performed at compile time.\",\n      \"is_correct\": false,\n      \"explanation\": \"Incorrect. Static typing means that type checking is done at compile time. Languages with static typing often require you to explicitly declare variable types, or the compiler infers the type. The statement 'Variables are not explicitly declared with a data type' is a characteristic of dynamic typing.\"\n    },\n    {\n      \"id\": 3,\n      \"question\": \"What is the main difference between the Stack and the Heap?\",\n      \"user_answer\": \"The stack is larger than the heap.\",\n      \"correct_answer\": \"The stack is automatically managed, while the heap requires explicit management (or garbage collection).\",\n      \"is_correct\": false,\n      \"explanation\": \"Incorrect. The main difference lies in memory management. The stack is automatically managed (allocation and deallocation), while the heap requires explicit management by the programmer (or automatic garbage collection in some languages). The stack is typically smaller than the heap.\"\n    },\n    {\n      \"id\": 4,\n      \"question\": \"What is a key characteristic of immutable data types?\",\n      \"user_answer\": \"Their value cannot be changed after creation.\",\n      \"correct_answer\": \"Their value cannot be changed after creation.\",\n      \"is_correct\": true,\n      \"explanation\": \"Correct. Immutable data types, once created, cannot have their values modified.\"\n    },\n    {\n      \"id\": 5,\n      \"question\": \"What is the purpose of explicit type conversion (casting)?\",\n      \"user_answer\": \"To change a data type to which the value should be converted, often from a larger to a smaller data type, or change the data interpretation.\",\n      \"correct_answer\": \"To change a data type to which the value should be converted, often from a larger to a smaller data type, or change the data interpretation.\",\n      \"is_correct\": true,\n      \"explanation\": \"Correct. Explicit type conversion (casting) is used to change the data type of a value, often to convert from a larger type to a smaller type, or to reinterpret the underlying data.\"\n    }\n  ]\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "avgLogprobs": -0.08605450697646227
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 3286,
+    "candidatesTokenCount": 721,
+    "totalTokenCount": 4007,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 3286
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 721
+      }
+    ]
+  },
+  "modelVersion": "gemini-2.0-flash",
+  "responseId": "Cscyae-dCcnV4-EP1oKowQE"
+}

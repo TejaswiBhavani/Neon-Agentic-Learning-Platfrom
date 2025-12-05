@@ -1,0 +1,31 @@
+[
+    {
+        "id": "L001",
+        "name": "Aarav Sharma",
+        "email": "aarav@example.com",
+        "password_hash": "pbkdf2:sha256:600000$Z7... (mock)",
+        "skill_level": "beginner",
+        "learning_goal": "Learn programming",
+        "preferred_style": "visual",
+        "current_domain": "Programming Basics",
+        "completed_concepts": [
+            "prog_c1"
+        ],
+        "interaction_log": []
+    },
+    {
+        "id": "L002",
+        "name": "Priya Gupta",
+        "email": "priya@example.com",
+        "password_hash": "pbkdf2:sha256:600000$Y8... (mock)",
+        "skill_level": "intermediate",
+        "learning_goal": "Master mathematics",
+        "preferred_style": "kinesthetic",
+        "current_domain": "Mathematics Basics",
+        "completed_concepts": [
+            "math_c1",
+            "math_c2"
+        ],
+        "interaction_log": []
+    }
+]
