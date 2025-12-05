@@ -115,6 +115,9 @@ def evaluate_tutor_quiz():
     feedback = ai_tutor.evaluate_quiz(content, user_answers, quiz_questions)
     return jsonify({'feedback': feedback})
 
+from modules.emotional_agent import EmotionalAgent
+emotional_agent = EmotionalAgent(api_key=os.getenv("GEMINI_API_KEY"))
+
 @app.route('/api/feedback', methods=['POST'])
 def save_feedback():
     current_user = get_default_user()
@@ -137,7 +140,15 @@ def save_feedback():
     try:
         db.session.add(feedback)
         db.session.commit()
-        return jsonify({'message': 'Feedback saved successfully', 'id': feedback.id})
+        
+        # Get Emotional Agent Response
+        agent_response = emotional_agent.get_response(emotion, topic)
+        
+        return jsonify({
+            'message': 'Feedback saved successfully', 
+            'id': feedback.id,
+            'agent_response': agent_response
+        })
     except Exception as e:
         db.session.rollback()
         return jsonify({'message': 'Error saving feedback', 'error': str(e)}), 500

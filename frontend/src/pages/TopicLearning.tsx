@@ -52,11 +52,13 @@ const TopicLearning: React.FC = () => {
     const [storyModeActive, setStoryModeActive] = useState(false);
 
     // Auto-start if topic is provided via URL
+    // Auto-start ONLY if topic is provided via URL (on mount)
     useEffect(() => {
-        if (topic && stage === 'input' && !loading) {
+        const urlTopic = searchParams.get('topic');
+        if (urlTopic && stage === 'input' && !loading) {
             handleGenerateContent();
         }
-    }, [topic]);
+    }, []); // Empty dependency array ensures this runs only on mount
 
     const handleGenerateContent = async () => {
         if (!topic) return;
@@ -165,39 +167,45 @@ const TopicLearning: React.FC = () => {
         }
     };
 
+    const [agentContent, setAgentContent] = useState<{ type: string, content: string, metadata: any } | null>(null);
+
     const handleEmotionSelect = async (emotion: string, note?: string) => {
         setShowFeedbackModal(false);
 
         // Save feedback to backend
         try {
-            await fetch('http://localhost:5000/api/feedback', {
+            const res = await fetch('http://localhost:5000/api/feedback', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ topic, emotion, note })
             });
+            const data = await res.json();
+
+            if (data.agent_response) {
+                const response = data.agent_response;
+                setAgentContent(response);
+
+                switch (response.type) {
+                    case 'game':
+                        setIntervention('mind_game');
+                        break;
+                    case 'story':
+                        setIntervention('story_mode');
+                        setStoryModeActive(true);
+                        break;
+                    case 'message':
+                        // Show message (using alert for now, or a custom modal)
+                        alert(response.content);
+                        break;
+                    case 'challenge':
+                        setIntervention('challenge');
+                        break;
+                    default:
+                        break;
+                }
+            }
         } catch (err) {
             console.error("Failed to save feedback:", err);
-        }
-
-        // Trigger Intervention
-        switch (emotion) {
-            case 'exhausted': // Red Zone
-                setIntervention('mind_game');
-                break;
-            case 'tired': // Orange Zone
-                setIntervention('story_mode');
-                setStoryModeActive(true);
-                break;
-            case 'good': // Yellow Zone
-                // Continue normally
-                break;
-            case 'happy': // Green Zone
-                // Positive reinforcement (could be a toast or animation)
-                alert("Great job! Keep up the momentum! 🚀");
-                break;
-            case 'enthusiastic': // Gold Zone
-                setIntervention('challenge');
-                break;
         }
     };
 
@@ -223,7 +231,7 @@ const TopicLearning: React.FC = () => {
                 {/* Stage: Input */}
                 {stage === 'input' && (
                     <div className="max-w-2xl mx-auto mt-20 text-center animate-slide-up">
-                        <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-8 leading-tight">
+                        <h2 className="text-5xl font-extrabold text-white mb-8 leading-tight">
                             What do you want to <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-300 dark:to-purple-300">learn today?</span>
                         </h2>
                         <div className="relative group">
@@ -485,16 +493,21 @@ const TopicLearning: React.FC = () => {
                     onSelectEmotion={handleEmotionSelect}
                 />
 
-                {intervention === 'mind_game' && (
-                    <MindGame onComplete={() => setIntervention('none')} />
+                {intervention === 'mind_game' && agentContent?.metadata && (
+                    <MindGame
+                        gameType={agentContent.metadata.type}
+                        onComplete={() => setIntervention('none')}
+                    />
                 )}
 
-                {intervention === 'story_mode' && (
+                {intervention === 'story_mode' && agentContent && (
                     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 animate-fade-in">
-                        <div className="glass-panel p-10 rounded-3xl max-w-lg text-center">
+                        <div className="glass-panel p-10 rounded-3xl max-w-2xl text-center overflow-y-auto max-h-[80vh]">
                             <Coffee size={64} className="text-amber-400 mx-auto mb-6" />
-                            <h2 className="text-3xl font-bold text-white mb-4">Story Mode Activated</h2>
-                            <p className="text-indigo-200 mb-8 text-lg">We've switched to a more relaxed, narrative-driven learning style. Take a deep breath and enjoy the story.</p>
+                            <h2 className="text-3xl font-bold text-white mb-4">{agentContent.metadata.title || "Story Mode"}</h2>
+                            <div className="text-indigo-100 mb-8 text-lg text-left whitespace-pre-wrap font-serif leading-relaxed">
+                                {agentContent.content}
+                            </div>
                             <button
                                 onClick={() => setIntervention('none')}
                                 className="bg-amber-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-amber-400 transition-all"
@@ -505,12 +518,12 @@ const TopicLearning: React.FC = () => {
                     </div>
                 )}
 
-                {intervention === 'challenge' && (
+                {intervention === 'challenge' && agentContent && (
                     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 animate-fade-in">
                         <div className="glass-panel p-10 rounded-3xl max-w-lg text-center border border-purple-500/50 shadow-[0_0_50px_rgba(168,85,247,0.3)]">
                             <Zap size={64} className="text-purple-400 mx-auto mb-6 animate-pulse" />
                             <h2 className="text-3xl font-bold text-white mb-4">Challenge Mode Unlocked!</h2>
-                            <p className="text-indigo-200 mb-8 text-lg">Your enthusiasm is contagious! We've unlocked a bonus challenge question for your next topic.</p>
+                            <p className="text-indigo-200 mb-8 text-lg">{agentContent.content}</p>
                             <button
                                 onClick={() => setIntervention('none')}
                                 className="bg-purple-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-purple-500 transition-all shadow-lg hover:shadow-purple-500/50"

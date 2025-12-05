@@ -5,7 +5,7 @@ import os
 class AITutor:
     def __init__(self, api_key):
         self.api_key = api_key
-        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
 
     def _call_gemini(self, prompt):
         url = f"{self.base_url}?key={self.api_key}"

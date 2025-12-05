@@ -5,7 +5,7 @@ import os
 class AIAssistant:
     def __init__(self, api_key):
         self.api_key = api_key
-        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
         
         self.system_prompt = """
         You are the "Neon Guide", an intelligent AI assistant embedded within the "AI Learning System" application.
